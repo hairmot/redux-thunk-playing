@@ -1,0 +1,3 @@
+export const RECEIVE_TIMER = "RECEIVE_TIMER";
+export const UPDATE_TIMER = "UPDATE_TIMER";
+export const REQUEST_TIMER = "REQUEST_TIMER";

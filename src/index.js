@@ -1,7 +1,7 @@
 import React from 'react';
 import thunkMiddleware from 'redux-thunk'
 import ReactDOM from 'react-dom';
-import AddTodoForm from './AddToDoForm';
+import AddTodoForm from './Components/AddToDoForm';
 import {createStore, applyMiddleware} from 'redux';
 import Reducer from './Reducers/Reducer';
 import { Provider } from 'react-redux';

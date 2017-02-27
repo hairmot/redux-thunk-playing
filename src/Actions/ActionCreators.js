@@ -1,23 +1,22 @@
-export function updateTimer(timer) 
-{   
+import * as types from '../Constants/ActionTypes'
+
+export function updateTimer(timer) {   
     return {
-        type: "UPDATE_TIMER",
+        type: types.UPDATE_TIMER,
         timer: timer + 1
     }
 }
 
-//New actions for async 
-
 function requestTimer() {
     return {
-        type: "REQUEST_TIMER",
+        type: types.REQUEST_TIMER,
         loading: true
     }
 }
 
 function receiveTimer(json) {
     return {
-        type: "RECEIVE_TIMER",
+        type: types.RECEIVE_TIMER,
         loading: false,
         timer: json.timer
     }
@@ -33,3 +32,4 @@ export function fetchTimer() {
         );
     }
 }
+
