@@ -1,0 +1,1 @@
+This is a very basic example of using react, redux, react-redux and redux-thunk to connect to an external data source and manipulate the returned data.
