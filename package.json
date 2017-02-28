@@ -10,6 +10,7 @@
     "redux-thunk": "^2.2.0"
   },
   "dependencies": {
+    "express": "^4.14.1",
     "office-ui-fabric-react": "^1.12.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
