@@ -2,23 +2,36 @@ import React from 'react';
 import * as actionCreators from '../Actions/ActionCreators.js';
 import { connect} from 'react-redux';
 import { bindActionCreators } from 'redux'
+import {PrimaryButton} from 'office-ui-fabric-react/lib/Button';
+import {TextField} from 'office-ui-fabric-react/lib/TextField';
+import { Spinner, SpinnerType} from 'office-ui-fabric-react/lib/Spinner';
+import 'office-ui-fabric-react/dist/css/fabric.css';
 
-  class AddToDoForm extends React.Component {
 
-    render() {     
+class AddToDoForm extends React.Component {
+
+    render() {   
+      let spinner = this.props.loading === true ?  <Spinner type={ SpinnerType.large } /> : "";
       return (
-        <div>
-          <button onClick={this.update.bind(this)}>Refresh from server</button> 
-          <img src="load.gif" alt="loading" 
-              style={
-                  {"display": this.props.loading === true ? "inline" : "none" }
-              } 
-          /> 
-          <br />
-          <button onClick={this.increment.bind(this)}>Increment</button>
-          <br />
-          {this.props.timer}
-        </div>
+        <div className="ms-Grid">
+          <div className="ms-Grid-row">
+            <div className="ms-Grid-col ms-u-sm6">
+              <TextField value={this.props.timer}></TextField>
+            </div>
+            <div className="ms-Grid-col ms-u-sm1">
+              {spinner}
+            </div>
+          </div>
+          <div className="ms-Grid-row">
+            <span className="ms-Grid-col ms-u-sm5">
+              <PrimaryButton onClick={this.update.bind(this)}>Refresh from server</PrimaryButton>
+            </span>
+            <span className="ms-Grid-col ms-u-sm6">
+              <PrimaryButton onClick={this.increment.bind(this)}>Increment</PrimaryButton>
+            </span>
+          </div>  
+          
+          </div>
       )
     }
 
